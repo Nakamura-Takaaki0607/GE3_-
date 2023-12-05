@@ -18,7 +18,8 @@ public: // ƒƒ“ƒoŠÖ”
 	void Initialize(HINSTANCE hInstance, HWND hwnd);
 	// XV
 	void Update();
-
+	// namespaceÈ—ª
+	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
 private:
-	Microsoft::WRL::ComPtr<IDirectInputDevice8> keyboard;
+	ComPtr<IDirectInputDevice8> keyboard;
 };

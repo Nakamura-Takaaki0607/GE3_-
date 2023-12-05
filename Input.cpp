@@ -2,18 +2,17 @@
 
 #include <cassert>
 
-using namespace Microsoft::WRL;
-
 void Input::Initialize(HINSTANCE hInstance, HWND hwnd)
 {
 	HRESULT result;
 
 	// DirectInputの初期化
-	ComPtr<IDirectInput8> directInput;
+	ComPtr<IDirectInput8> directInput = nullptr;
 	result = DirectInput8Create(hInstance, DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&directInput, nullptr);
 	assert(SUCCEEDED(result));
 	// キーボードデバイス生成
 	result = directInput->CreateDevice(GUID_SysKeyboard, &keyboard, NULL);
+	assert(SUCCEEDED(result));
 	// 入力データ形式のセット
 	result = keyboard->SetDataFormat(&c_dfDIKeyboard);
 	assert(SUCCEEDED(result));
