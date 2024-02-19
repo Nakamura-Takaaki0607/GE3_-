@@ -8,6 +8,8 @@
 
 #include "DirectXCommon.h"
 
+#include <DirectXTex.h>
+
 // ã§í 
 class SpriteCommon
 {
@@ -17,10 +19,12 @@ private:
 public:
 	// èâä˙âª
 	void Initialize(DirectXCommon* dxCommon);
+	void SpritePreDraw();
 
 	// Getter
 	ID3D12RootSignature* GetRootSignature() { return rootSignature.Get(); }
 	ID3D12PipelineState* GetPipelineState() { return pipelineState.Get(); }
+	DirectXCommon* GetDirectXCommon()       { return dxCommon_; }
 
 private:
 	static IDxcBlob* CompileShader(

@@ -1,6 +1,7 @@
 #pragma once
-
 #include <Windows.h>
+
+#pragma comment(lib, "winmm.lib")
 
 class WinApp
 {
