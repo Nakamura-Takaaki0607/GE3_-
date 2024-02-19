@@ -5,7 +5,6 @@
 #include "Sprite.h"
 
 #include "Input.h"
-
 #include "ImGuiManager.h"
 
 #include <vector>
